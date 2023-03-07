@@ -9,6 +9,8 @@
 
 !qtile/
 !qtile/*
+!qtile/Wallpapers
+!qtile/Wallpapers/*
 
 !dunst/
 !dunst/*
