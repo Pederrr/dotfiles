@@ -21,7 +21,7 @@ colors = {
 mod = "mod4"
 terminal = "kitty"
 web_browser = "firefox"
-wallpaper = "Wallpapers/zoro_wp.png"
+wallpaper = "~/.config/qtile/Wallpapers/zoro_wp.png"
 
 keys = [
     # A list of available commands that can be bound to keys can be found
