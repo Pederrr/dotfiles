@@ -79,8 +79,14 @@ require'nvim-treesitter.configs'.setup {
 
 require("nvim-tree").setup()
 
--- keybinds for lspconfig and cmp
+local function open_nvim_tree()
+	require("nvim-tree.api").tree.toggle()
+end
+
 local opts = { noremap=true, silent=true }
+vim.keymap.set('n', 'tt', open_nvim_tree, opts)
+
+-- keybinds for lspconfig and cmp
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
