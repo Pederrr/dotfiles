@@ -129,9 +129,9 @@ layout_theme = {
         }
 
 layouts = [
+    layout.Columns(**layout_theme),
     layout.MonadTall(**layout_theme),
     # layout.Stack(**layout_theme),
-    layout.Columns(**layout_theme),
     layout.Max(),
     # layout.Bsp(**layout_theme),
     # layout.Matrix(),
