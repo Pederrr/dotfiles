@@ -1,4 +1,4 @@
-from libqtile import bar, layout, widget, extension, qtile, hook
+from libqtile import bar, layout, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 
@@ -59,25 +59,13 @@ keys = [
         desc="Toggle between split and unsplit sides of stack",
     ),
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
+
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
 
-    # Key([mod], "d", lazy.run_extension(
-    #       extension.DmenuRun(
-    #           dmenu_prompt=">",
-    #           background=colors["black"],
-    #           foreground=colors["white"],
-    #           selected_background=colors["blue"],
-    #           selected_foreground=colors["black"],
-    #           font="Hack",
-    #           fontsize=10,
-    #           dmenu_bottom=True,
-    #           )
-    #       )
-    #   ),
     Key([mod], "r", lazy.spawn("rofi -show drun -show-icons")),
     Key([mod], "d", lazy.spawn("rofi -show run")),
     Key([mod], "b", lazy.spawn(web_browser)),
@@ -113,10 +101,6 @@ for i in groups:
                 lazy.window.togroup(i.name, switch_group=True),
                 desc="Switch to & move focused window to group {}".format(i.name),
             ),
-            # Or, use below if you prefer not to switch to that group.
-            # # mod1 + shift + letter of group = move focused window to group
-            # Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
-            #     desc="move focused window to group {}".format(i.name)),
         ]
     )
 
@@ -306,4 +290,3 @@ def start_once():
 # java that happens to be on java's whitelist.
 wmname = "LG3D"
 # wmname = "Qtile"
-# I fucking hate java applications
