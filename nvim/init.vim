@@ -2,7 +2,7 @@
 call plug#begin()
     Plug 'vim-airline/vim-airline'
     Plug 'ghifarit53/tokyonight-vim'
-    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'nvim-treesitter/nvim-treesitter'
     Plug 'neovim/nvim-lspconfig'
     Plug 'hrsh7th/nvim-cmp'
     Plug 'hrsh7th/cmp-nvim-lsp'
