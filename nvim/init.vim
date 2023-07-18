@@ -119,10 +119,15 @@ local lsp_flags = {
 
 -- used language servers need to be installed and usable on the system
 
--- https://github.com/microsoft/pyright
-require('lspconfig')['pyright'].setup {
+-- https://github.com/python-lsp/python-lsp-server
+-- plugins for black, isort, mypy
+require('lspconfig')['pylsp'].setup {
 	on_attach = on_attach,
     flags = lsp_flags,
+	settings = {
+		configurationSources = {"flake8"},
+		formatCommand = {"isort", "black"}
+	}
 }
 
 -- https://github.com/razzmatazz/csharp-language-server
@@ -164,6 +169,8 @@ cmp.setup {
       { name = 'nvim_lsp_signature_help' },
   },
 }
+
+vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
 
 local sign = function(opts)
   vim.fn.sign_define(opts.name, {
