@@ -11,6 +11,8 @@ call plug#begin()
     Plug 'aklt/plantuml-syntax'
     Plug 'kyazdani42/nvim-tree.lua'
     Plug 'kyazdani42/nvim-web-devicons'
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
 call plug#end()
 
 set number
@@ -62,6 +64,9 @@ for key in ['<up>', '<down>', '<left>', '<right>']
 endfor
 
 set clipboard+=unnamedplus
+
+"open fzf
+nmap <silent> <C-p> :Files<CR>
 
 "setting space as the leader key
 nnoremap <space> <nop>
