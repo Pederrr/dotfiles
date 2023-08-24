@@ -13,6 +13,7 @@ call plug#begin()
     Plug 'kyazdani42/nvim-web-devicons'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
+    Plug 'f-person/git-blame.nvim'
 call plug#end()
 
 set number
