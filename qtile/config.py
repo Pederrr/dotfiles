@@ -66,6 +66,10 @@ keys = [
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
 
+    # Turn the screen off
+    Key([mod, "control"], "Home", lazy.spawn("xset s activate && sleep 0.2 && xset dpms force suspend", shell=True)),
+
+    # Launching applications
     Key([mod], "r", lazy.spawn("rofi -show drun -show-icons")),
     Key([mod], "d", lazy.spawn("rofi -show run")),
     Key([mod], "b", lazy.spawn(web_browser)),
@@ -216,6 +220,15 @@ screens = [
             25,
             background=colors["black"],
             # opacity = 0.5,
+        ),
+        wallpaper=wallpaper,
+        wallpaper_mode="fill"
+    ),
+    Screen(
+        top=bar.Bar(
+            init_widgets(),
+            25,
+            background=colors["black"],
         ),
         wallpaper=wallpaper,
         wallpaper_mode="fill"
