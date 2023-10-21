@@ -13,7 +13,7 @@ call plug#begin()
     Plug 'kyazdani42/nvim-web-devicons'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
-    Plug 'f-person/git-blame.nvim'
+	Plug 'f-person/git-blame.nvim'
 call plug#end()
 
 set number
@@ -77,6 +77,7 @@ lua << EOF
 require'nvim-treesitter.configs'.setup {
   sync_install = false,
   ignore_install = {},
+  auto_install = true,
   highlight = {
     enable = true,
     additional_vim_regex_highlighting = false,
@@ -132,7 +133,7 @@ require('lspconfig')['pylsp'].setup {
     flags = lsp_flags,
 	settings = {
 		configurationSources = {"flake8"},
-		formatCommand = {"isort", "black"}
+		formatCommand = {"isort", "black"},
 	}
 }
 
@@ -154,6 +155,26 @@ require('lspconfig')['perlpls'].setup{
     flags = lsp_flags,
 }
 
+require('lspconfig')['rust_analyzer'].setup{
+	on_attach = on_attach,
+	flags = lsp_flags,
+	settings = {
+		["rust-analyzer"] = {
+			cargo = {
+				allFeatures = true
+			},
+			checkOnSave = {
+				command = "clippy"
+			}
+		}
+	}
+}
+
+require('lspconfig')['ansiblels'].setup{
+	on_attach = on_attach,
+	flags = lsp_flags,
+}
+
 local cmp = require 'cmp'
 cmp.setup {
   snippet = {
@@ -171,6 +192,7 @@ cmp.setup {
     },
   }),
   sources = {
+	  { name = 'path' },
       { name = 'nvim_lsp' },
       { name = 'nvim_lsp_signature_help' },
   },
