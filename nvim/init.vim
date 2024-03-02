@@ -161,7 +161,10 @@ require('lspconfig')['rust_analyzer'].setup{
 	settings = {
 		["rust-analyzer"] = {
 			cargo = {
-				allFeatures = true
+				allFeatures = true,
+				buildScripts = {
+					enable = true
+				}
 			},
 			checkOnSave = {
 				command = "clippy"
@@ -171,6 +174,11 @@ require('lspconfig')['rust_analyzer'].setup{
 }
 
 require('lspconfig')['ansiblels'].setup{
+	on_attach = on_attach,
+	flags = lsp_flags,
+}
+
+require('lspconfig')['bufls'].setup{
 	on_attach = on_attach,
 	flags = lsp_flags,
 }
