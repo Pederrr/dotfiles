@@ -132,8 +132,14 @@ require('lspconfig')['pylsp'].setup {
 	on_attach = on_attach,
     flags = lsp_flags,
 	settings = {
-		configurationSources = {"flake8"},
-		formatCommand = {"isort", "black"},
+		pylsp = {
+			plugins = {
+				black = { enabled = true },
+				pylint = { enabled = true },
+				pylsp_mypy = { enabled = true },
+				pyls_isort = { enabled = true },
+			}
+		}
 	}
 }
 
@@ -195,6 +201,12 @@ require('lspconfig')['bufls'].setup{
 	on_attach = on_attach,
 	flags = lsp_flags,
 }
+
+require('lspconfig')['hls'].setup{
+	on_attach = on_attach,
+	flags = lsp_flags,
+}
+
 
 local cmp = require 'cmp'
 cmp.setup {
