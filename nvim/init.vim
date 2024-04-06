@@ -68,6 +68,7 @@ set clipboard+=unnamedplus
 
 "open fzf
 nmap <silent> <C-p> :Files<CR>
+nmap <silent> <C-a> :Ag<CR>
 
 "setting space as the leader key
 nnoremap <space> <nop>
