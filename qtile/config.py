@@ -67,7 +67,7 @@ keys = [
     Key([MOD, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
 
     # Turn the screen off
-    Key([MOD, "control"], "Home", lazy.spawn("xset s activate && sleep 0.2 && xset dpms force suspend", shell=True)),
+    Key([MOD, "control"], "End", lazy.spawn("xset s activate && sleep 0.2 && xset dpms force suspend", shell=True)),
 
     # Launching applications
     Key([MOD], "r", lazy.spawn("rofi -show drun -show-icons")),
