@@ -128,17 +128,19 @@ local lsp_flags = {
 -- used language servers need to be installed and usable on the system
 
 -- https://github.com/python-lsp/python-lsp-server
--- plugins for black, isort, mypy
+-- plugins for ruff, mypy
 require('lspconfig')['pylsp'].setup {
 	on_attach = on_attach,
     flags = lsp_flags,
 	settings = {
 		pylsp = {
 			plugins = {
-				black = { enabled = true },
-				pylint = { enabled = true },
+				ruff = {
+					enabled = true,
+					formatEnabled = true,
+					format = { "I" },
+				},
 				pylsp_mypy = { enabled = true },
-				pyls_isort = { enabled = true },
 			}
 		}
 	}
