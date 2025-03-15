@@ -67,6 +67,7 @@ endfor
 set clipboard+=unnamedplus
 
 "open fzf
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 nmap <silent> <C-p> :Files<CR>
 nmap <silent> <C-a> :Rg<CR>
 
