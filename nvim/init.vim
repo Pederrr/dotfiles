@@ -200,11 +200,6 @@ require('lspconfig')['ansiblels'].setup{
 	flags = lsp_flags,
 }
 
-require('lspconfig')['bufls'].setup{
-	on_attach = on_attach,
-	flags = lsp_flags,
-}
-
 require('lspconfig')['hls'].setup{
 	on_attach = on_attach,
 	flags = lsp_flags,
