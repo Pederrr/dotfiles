@@ -2,6 +2,7 @@
 call plug#begin()
     Plug 'vim-airline/vim-airline'
     Plug 'ghifarit53/tokyonight-vim'
+	Plug 'folke/tokyonight.nvim'
     Plug 'nvim-treesitter/nvim-treesitter'
     Plug 'neovim/nvim-lspconfig'
     Plug 'hrsh7th/nvim-cmp'
@@ -32,8 +33,7 @@ set noexpandtab
 
 "theme
 set termguicolors
-let g:tokyonight_style = 'night'
-colorscheme tokyonight
+colorscheme tokyonight-night
 
 "airline theme
 let g:airline_theme = 'tokyonight'
