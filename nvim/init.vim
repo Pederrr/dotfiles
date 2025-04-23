@@ -2,7 +2,7 @@
 call plug#begin()
     Plug 'vim-airline/vim-airline'
     Plug 'ghifarit53/tokyonight-vim'
-	Plug 'folke/tokyonight.nvim'
+    Plug 'folke/tokyonight.nvim'
     Plug 'nvim-treesitter/nvim-treesitter'
     Plug 'neovim/nvim-lspconfig'
     Plug 'hrsh7th/nvim-cmp'
@@ -67,7 +67,6 @@ endfor
 set clipboard+=unnamedplus
 
 "open fzf
-let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 nmap <silent> <C-p> :Files<CR>
 nmap <silent> <C-a> :Rg<CR>
 
@@ -89,7 +88,7 @@ require'nvim-treesitter.configs'.setup {
 require("nvim-tree").setup()
 
 local function open_nvim_tree()
-	require("nvim-tree.api").tree.toggle()
+    require("nvim-tree.api").tree.toggle()
 end
 
 local opts = { noremap=true, silent=true }
@@ -132,7 +131,7 @@ local lsp_flags = {
 -- plugins for ruff, mypy
 require('lspconfig')['pylsp'].setup {
 	on_attach = on_attach,
-    flags = lsp_flags,
+	flags = lsp_flags,
 	settings = {
 		pylsp = {
 			plugins = {
