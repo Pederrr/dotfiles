@@ -1,11 +1,9 @@
 *
 
-!nvim/init.vim
-
 !.gitignore
 
 !nvim
-!nvim/*
+!nvim/**
 
 !qtile/
 !qtile/*
