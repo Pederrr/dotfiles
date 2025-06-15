@@ -1,6 +1,6 @@
 "vim plug
 call plug#begin()
-    Plug 'vim-airline/vim-airline'
+	Plug 'nvim-lualine/lualine.nvim'
     Plug 'ghifarit53/tokyonight-vim'
     Plug 'folke/tokyonight.nvim'
     Plug 'nvim-treesitter/nvim-treesitter'
@@ -34,24 +34,6 @@ set noexpandtab
 "theme
 set termguicolors
 colorscheme tokyonight-night
-
-"airline theme
-let g:airline_theme = 'tokyonight'
-
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-
-" powerline symbols
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = '☰'
-let g:airline_symbols.maxlinenr = ''
-let g:airline_symbols.dirty='⚡'
 
 "vimtex
 let g:vimtex_view_method = 'zathura'
@@ -243,5 +225,8 @@ sign({name = 'DiagnosticSignError', text = '✘'})
 sign({name = 'DiagnosticSignWarn', text = '▲'})
 sign({name = 'DiagnosticSignHint', text = '⚑'})
 sign({name = 'DiagnosticSignInfo', text = ''})
+
+-- lualine
+require('lualine').setup()
 
 EOF
