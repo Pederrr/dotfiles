@@ -1,14 +1,12 @@
 "vim plug
 call plug#begin()
 	Plug 'nvim-lualine/lualine.nvim'
-    Plug 'ghifarit53/tokyonight-vim'
     Plug 'folke/tokyonight.nvim'
     Plug 'nvim-treesitter/nvim-treesitter'
     Plug 'neovim/nvim-lspconfig'
     Plug 'hrsh7th/nvim-cmp'
     Plug 'hrsh7th/cmp-nvim-lsp'
     Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
-    Plug 'lervag/vimtex'
     Plug 'aklt/plantuml-syntax'
     Plug 'kyazdani42/nvim-tree.lua'
     Plug 'kyazdani42/nvim-web-devicons'
@@ -33,10 +31,6 @@ set noexpandtab
 "theme
 set termguicolors
 colorscheme tokyonight-night
-
-"vimtex
-let g:vimtex_view_method = 'zathura'
-let g:vimtex_compiler_method = 'latexmk'
 
 "some keybinds - disabling arrow keys
 for key in ['<up>', '<down>', '<left>', '<right>']
