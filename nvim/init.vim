@@ -14,38 +14,24 @@ call plug#begin()
 	Plug 'ibhagwan/fzf-lua'
 call plug#end()
 
-set number
-set relativenumber
-
-set showmatch
-set showcmd
-
-set smartindent
-
-set tabstop=4
-set shiftwidth=4
-
-set smarttab
-set noexpandtab
-
-"theme
-set termguicolors
-colorscheme tokyonight-night
-
-"some keybinds - disabling arrow keys
-for key in ['<up>', '<down>', '<left>', '<right>']
-    exec 'nnoremap' key '<nop>'
-    exec 'inoremap' key '<nop>'
-    exec 'vnoremap' key '<nop>'
-endfor
-
-set clipboard+=unnamedplus
-
-"setting space as the leader key
-nnoremap <space> <nop>
-let mapleader="\<space>"
-
 lua << EOF
+
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
+vim.opt.number = true
+vim.opt.relativenumber = true
+
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
+vim.opt.expandtab = false
+
+vim.opt.smartindent = true
+
+vim.opt.clipboard = 'unnamedplus'
+
+vim.cmd[[colorscheme tokyonight-night]]
+
 require'nvim-treesitter.configs'.setup {
   sync_install = false,
   ignore_install = {},
