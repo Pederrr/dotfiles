@@ -12,9 +12,8 @@ call plug#begin()
     Plug 'aklt/plantuml-syntax'
     Plug 'kyazdani42/nvim-tree.lua'
     Plug 'kyazdani42/nvim-web-devicons'
-    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-    Plug 'junegunn/fzf.vim'
 	Plug 'f-person/git-blame.nvim'
+	Plug 'ibhagwan/fzf-lua'
 call plug#end()
 
 set number
@@ -47,10 +46,6 @@ for key in ['<up>', '<down>', '<left>', '<right>']
 endfor
 
 set clipboard+=unnamedplus
-
-"open fzf
-nmap <silent> <C-p> :Files<CR>
-nmap <silent> <C-a> :Rg<CR>
 
 "setting space as the leader key
 nnoremap <space> <nop>
@@ -228,5 +223,10 @@ sign({name = 'DiagnosticSignInfo', text = ''})
 
 -- lualine
 require('lualine').setup()
+
+-- fzf-lua
+require('fzf-lua').setup()
+vim.api.nvim_set_keymap("n", "<C-p>", [[<Cmd>lua require"fzf-lua".files()<CR>]], {})
+vim.api.nvim_set_keymap("n", "<C-a>", [[<Cmd>lua require"fzf-lua".grep_project()<CR>]], {})
 
 EOF
