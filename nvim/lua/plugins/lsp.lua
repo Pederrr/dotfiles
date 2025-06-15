@@ -123,6 +123,9 @@ return {
 					end,
 				}
 			}
+
+			-- autoformat
+			vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
 		end,
 	}
 }
