@@ -5,8 +5,8 @@ return {
 			suggestion = {
 				auto_trigger = true,
 				keymap = {
-					accept = '<M-L>',
-					accept_word = '<M-l>',
+					accept = '<C-CR>',
+					accept_word = '<C-l>',
 				},
 			},
 			copilot_model = 'gpt-4o-copilot',
