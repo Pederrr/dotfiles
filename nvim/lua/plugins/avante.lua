@@ -13,10 +13,10 @@ return {
 				--copilot = {
 				--model = "claude-3.7-sonnet"
 				--},
-				-- ollama = {
-				-- endpoint = "http://localhost:11434",
-				-- model = "deepseek-r1:1.5b", -- your desired model (or use gpt-4o, etc.)
-				-- }
+				ollama = {
+					enpoint = "http://localhost:11434",
+					model = "deepseek-r1:1.5b", -- your desired model (or use gpt-4o, etc.)
+				}
 			}
 		},
 		-- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
@@ -27,14 +27,13 @@ return {
 			"nvim-lua/plenary.nvim",
 			"MunifTanjim/nui.nvim",
 			--- The below dependencies are optional,
-			"echasnovski/mini.pick", -- for file_selector provider mini.pick
-			"nvim-telescope/telescope.nvim", -- for file_selector provider telescope
-			"hrsh7th/nvim-cmp",     -- autocompletion for avante commands and mentions
-			"ibhagwan/fzf-lua",     -- for file_selector provider fzf
+			"hrsh7th/nvim-cmp",   -- autocompletion for avante commands and mentions
+			"ibhagwan/fzf-lua",   -- for file_selector provider fzf
 			"stevearc/dressing.nvim", -- for input provider dressing
-			"folke/snacks.nvim",    -- for input provider snacks
+			"folke/snacks.nvim",  -- for input provider snacks
 			"nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
 			"zbirenbaum/copilot.lua", -- for providers='copilot'
+			'MeanderingProgrammer/render-markdown.nvim',
 			{
 				-- support for image pasting
 				"HakonHarnes/img-clip.nvim",
@@ -51,14 +50,6 @@ return {
 						use_absolute_path = true,
 					},
 				},
-			},
-			{
-				-- Make sure to set this up properly if you have lazy=true
-				'MeanderingProgrammer/render-markdown.nvim',
-				opts = {
-					file_types = { "markdown", "Avante" },
-				},
-				ft = { "markdown", "Avante" },
 			},
 		},
 	}
