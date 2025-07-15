@@ -104,6 +104,7 @@ return {
 				},
 				hls = {},
 				lua_ls = {},
+				ruby_lsp = {},
 			}
 
 			require('mason').setup()
