@@ -104,7 +104,7 @@ return {
 				},
 				hls = {},
 				lua_ls = {},
-				ruby_lsp = {},
+				solargraph = {}, -- Ruby
 			}
 
 			require('mason').setup()
