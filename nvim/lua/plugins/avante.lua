@@ -8,7 +8,7 @@ return {
 		opts = {
 			-- add any opts here
 			-- for example
-			provider = "copilot",
+			provider = "gemini",
 			providers = {
 				--copilot = {
 				--model = "claude-3.7-sonnet"
