@@ -30,3 +30,6 @@
 
 !waybar
 !waybar/*
+
+!hypr
+!hypr/**
