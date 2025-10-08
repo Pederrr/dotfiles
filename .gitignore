@@ -27,3 +27,6 @@
 
 !starship
 !starship/*
+
+!waybar
+!waybar/*
