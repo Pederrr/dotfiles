@@ -22,6 +22,9 @@
 !rofi
 !rofi/*
 
+!tofi
+!tofi/**
+
 !screenshots
 !screenshots/*
 
