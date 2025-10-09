@@ -2,17 +2,18 @@ width = 100%
 height = 100%
 border-width = 0
 outline-width = 0
-padding-left = 33%
-padding-top = 33%
+padding-left = 38%
+padding-top = 30%
 result-spacing = 25
-num-results = 5
+num-results = 10
 
 font = Hack Nerd Font
-font-size = 24
+font-size = 15
 
 text-color = #4e4e5f
 
 prompt-text = " : "
+text-cursor = true
 
 background-color = #11111bd9
 selection-color = #83A4E7
