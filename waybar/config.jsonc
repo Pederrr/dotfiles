@@ -13,6 +13,7 @@
   ],
 
   "modules-right": [
+    "custom/music",
 	"hyprland/language",
     "bluetooth",
     "network",
@@ -97,5 +98,16 @@
     "format-en": "US",
     "format-sk": "SK",
     "on-click": "hyprctl switchxkblayout all next"   
+  },
+
+
+  "custom/music": {
+    "format": "  {}",
+    "escape": true,
+    "interval": 5,
+    "tooltip": true,
+    "exec": "playerctl metadata --format='{{ artist }} - {{ title }}'",
+    "on-click": "playerctl play-pause",
+    "max-length": 50
   },
 }

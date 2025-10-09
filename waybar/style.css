@@ -14,7 +14,7 @@
 /* --- Waybar Container --- */
 #waybar {
   background: transparent;
-  color: #c6d0f5;
+  color: @fg;
   margin: 0px;
   font-weight: 500;
 }
@@ -70,6 +70,17 @@
   border: none;
 }
 
+#custom-music {
+  background-color: @bg;
+  padding: 0.3rem 0.7rem;
+  margin: 5px 10px;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  min-width: 0;
+  border: none;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
 /* --- Right Modules (Single, Seamless Bar ) --- */
 #language,
 #bluetooth,
@@ -87,6 +98,7 @@
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
+#custom-music:hover,
 #language:hover,
 #bluetooth:hover,
 #pulseaudio:hover,
