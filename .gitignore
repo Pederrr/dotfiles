@@ -5,28 +5,14 @@
 !nvim
 !nvim/**
 
-!qtile/
-!qtile/*
-!qtile/Wallpapers
-!qtile/Wallpapers/*
-
 !dunst/
 !dunst/*
 
 !kitty/
 !kitty/*
 
-!picom/
-!picom/*
-
-!rofi
-!rofi/*
-
 !tofi
 !tofi/**
-
-!screenshots
-!screenshots/*
 
 !starship
 !starship/*
