@@ -46,9 +46,8 @@
 
   "clock": {
     "timezone": "Europe/Prague",
-    "tooltip": false,
-    "format": "{:%H:%M  -  %A, %d}",
-    "interval": 20
+    "format": "{:%H:%M  -  %A, %b %d}",
+	"tooltip-format": "{calendar}",
   },
 
   "network": {
@@ -58,8 +57,7 @@
     "interval": 5,
     "tooltip-format": "{essid} ({signalStrength}%)",
     "on-click": "nm-connection-editor"
-
- },
+  },
 
   "backlight": {
         "format": "{icon}  {percent}%",
