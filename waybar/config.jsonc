@@ -13,7 +13,7 @@
   ],
 
   "modules-right": [
-    "custom/music",
+	"mpris",
 	"hyprland/language",
     "bluetooth",
     "network",
@@ -98,14 +98,17 @@
     "on-click": "hyprctl switchxkblayout all next"   
   },
 
-
-  "custom/music": {
-    "format": "  {}",
-    "escape": true,
-    "interval": 5,
-    "tooltip": true,
-    "exec": "playerctl metadata --format='{{ artist }} - {{ title }}'",
-    "on-click": "playerctl play-pause",
-    "max-length": 50
-  },
+  "mpris": {
+  	"format": "{player_icon} {artist}: {title}",
+	"format-paused": "{status_icon} <i>{artist}: {title}</i>",
+	"player-icons": {
+		"default": "▶",
+		"spotify": "",
+		"mpv": "🎵"
+	},
+	"status-icons": {
+		"paused": "⏸"
+	},
+	"max-length": 50
+  }
 }
