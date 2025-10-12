@@ -70,7 +70,8 @@
   border: none;
 }
 
-#mpris {
+#mpris,
+#tray {
   background-color: @bg;
   padding: 0.3rem 0.7rem;
   margin: 5px 10px 5px 0px;

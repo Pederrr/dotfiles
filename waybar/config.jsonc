@@ -14,6 +14,7 @@
 
   "modules-right": [
 	"mpris",
+	"tray",
 	"hyprland/language",
     "bluetooth",
     "network",
@@ -110,5 +111,9 @@
 		"paused": "⏸"
 	},
 	"max-length": 50
+  },
+
+  "tray": {
+    "spacing": 10
   }
 }
