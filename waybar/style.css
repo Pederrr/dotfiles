@@ -6,9 +6,6 @@
   font-family: Hack Nerd Font, sans-serif;
   font-size: 13px;
   min-height: 0;
-  padding-right: 0px;
-  padding-left: 0px;
-  padding-bottom: 0px;
 }
 
 /* --- Waybar Container --- */
@@ -167,10 +164,9 @@
 
 /* --- Tooltip Styles --- */
 tooltip {
-  background-color: #1a1b26;
-  color: #dddddd;
-  padding: 5px 12px;
-  margin: 5px 0px;
+  background-color: @bg;
+  color: @fg;
+  padding: 5px;
   border-radius: 6px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
