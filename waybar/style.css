@@ -85,7 +85,8 @@
 #pulseaudio,
 #backlight,
 #network,
-#battery {
+#battery,
+#idle_inhibitor {
   background-color: @bg;
   padding: 0.3rem 0.7rem;
   margin: 5px 0px; 
@@ -102,7 +103,8 @@
 #pulseaudio:hover,
 #backlight:hover,
 #network:hover,
-#battery:hover {
+#battery:hover,
+#idle_inhibitor:hover {
   background-color: rgb(41, 42, 53);
 }
 
@@ -160,6 +162,10 @@
 }
 #battery.warning:not(.charging) {
   color: #e78284;
+}
+
+#idle_inhibitor.activated {
+  color: #f9e2af;
 }
 
 /* --- Tooltip Styles --- */

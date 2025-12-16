@@ -20,6 +20,7 @@
     "network",
     "pulseaudio", 
     "backlight",
+    "idle_inhibitor",
     "battery",
   ],
 
@@ -115,5 +116,13 @@
 
   "tray": {
     "spacing": 10
+  },
+
+  "idle_inhibitor": {
+    "format": "{icon}",
+      "format-icons": {
+        "activated": " ",
+        "deactivated": " "
+      }
   }
 }
