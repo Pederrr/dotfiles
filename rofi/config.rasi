@@ -2,9 +2,11 @@ configuration {
   display-drun: "Applications:";
   display-window: "Windows:";
   drun-display-format: "{icon} {name}";
-  font: "Hack 10";
+  font: "hack 10";
   modi: "window,run,drun";
   icon-theme: "Papirus";
+  show-icons: true;
+  terminal: "kitty";
 }
 
 @theme "/dev/null"
