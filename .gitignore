@@ -11,8 +11,8 @@
 !kitty/
 !kitty/*
 
-!tofi
-!tofi/**
+!rofi
+!rofi/**
 
 !starship
 !starship/*
