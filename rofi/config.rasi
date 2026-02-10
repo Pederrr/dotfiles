@@ -1,9 +1,9 @@
 configuration {
   display-drun: "Applications:";
-  display-window: "Windows:";
   drun-display-format: "{icon} {name}";
+  display-run: "Run:";
   font: "hack 10";
-  modi: "window,run,drun";
+  modi: [run, drun];
   icon-theme: "Papirus";
   show-icons: true;
   terminal: "kitty";
@@ -29,6 +29,7 @@ configuration {
 
 window {
   border: 2;
+  border-radius: 5;
   width: 30%;
 }
 
