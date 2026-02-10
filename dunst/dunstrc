@@ -7,7 +7,7 @@
     width = 400
     height = (0, 300)
     origin = top-right
-    offset = (7, 10)
+    offset = (7, 7)
     scale = 0
     notification_limit = 0
 
@@ -23,7 +23,7 @@
 
     separator_height = 2
     separator_color = auto
-    padding = 8
+    padding = 12
     horizontal_padding = 8
     text_icon_padding = 0
 
@@ -33,7 +33,7 @@
     sort = yes
 
     ### Text ###
-    font = Hack 9
+    font = Hack 11
     line_height = 0
     markup = full
     format = "<b>%s</b>\n%b"
