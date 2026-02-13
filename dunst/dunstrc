@@ -1,38 +1,56 @@
+# vim: ft=cfg
+# See dunst(5) for all configuration options
+
 [global]
     ### Display ###
     monitor = 0
     follow = mouse
 
     ### Geometry ###
+
     width = 400
     height = (0, 300)
     origin = top-right
     offset = (7, 7)
     scale = 0
-    notification_limit = 0
+    notification_limit = 20
 
     ### Progress bar ###
+
     progress_bar = true
     progress_bar_height = 10
     progress_bar_frame_width = 1
     progress_bar_min_width = 150
     progress_bar_max_width = 300
-	highlight = "#7aa2f7"
+    progress_bar_corner_radius = 2
+    progress_bar_corners = all
+    icon_corner_radius = 0
+    icon_corners = all
+    # Defines color of the progress bar.
+    highlight = "#7aa2f7"
 
     indicate_hidden = yes
+
+    transparency = 0
 
     separator_height = 2
     separator_color = auto
     padding = 12
+
     horizontal_padding = 8
     text_icon_padding = 0
 
     frame_width = 2
+
+    # Defines color of the frame around the notification window.
     frame_color = "#7aa2f7"
+
+    gap_size = 1
 
     sort = yes
 
     ### Text ###
+
     font = Hack 11
     line_height = 0
     markup = full
@@ -48,48 +66,69 @@
 
     ### Icons ###
 
+    enable_recursive_icon_lookup = true
+    icon_theme = Papirus
     icon_position = left
 
-    min_icon_size = 0
-
-    max_icon_size = 32
-
-    icon_path = ePapirus
-	enable_recursive_icon_lookup = true
+    min_icon_size = 32
+    max_icon_size = 128
 
     ### History ###
-    sticky_history = yes
 
+    sticky_history = yes
     history_length = 20
 
     ### Misc/Advanced ###
+
     dmenu = /usr/bin/dmenu -p dunst:
-    browser = /usr/bin/firefox
+    browser = /usr/bin/xdg-open
     always_run_script = true
-    title = Dunst
-    class = Dunst
 
     corner_radius = 5
+    corners = all
 
     ignore_dbusclose = false
 
+    ### Wayland ###
+
+    # Uncomment this if you want to let notifications appear under fullscreen
+    # applications (default: overlay)
+    # layer = top
+
+    force_xwayland = false
+
+    ### Legacy
+
+    force_xinerama = false
+
     ### mouse
+
     mouse_left_click = close_current
     mouse_middle_click = do_action, close_current
     mouse_right_click = close_all
+
+[experimental]
+    per_monitor_dpi = false
+
 
 [urgency_low]
     background = "#1a1b26"
     foreground = "#7aa2f7"
     timeout = 10
+    default_icon = dialog-information-symbolic
 
 [urgency_normal]
     background = "#1a1b26"
     foreground = "#7aa2f7"
     timeout = 10
+    override_pause_level = 30
+    default_icon = dialog-information-symbolic
 
 [urgency_critical]
     background = "#1a1b26"
     foreground = "#f7768e"
     frame_color = "#f7768e"
     timeout = 0
+    override_pause_level = 60
+    default_icon = dialog-warning-symbolic
+
