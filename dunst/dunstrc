@@ -115,14 +115,12 @@
     background = "#1a1b26"
     foreground = "#7aa2f7"
     timeout = 10
-    default_icon = dialog-information-symbolic
 
 [urgency_normal]
     background = "#1a1b26"
     foreground = "#7aa2f7"
     timeout = 10
     override_pause_level = 30
-    default_icon = dialog-information-symbolic
 
 [urgency_critical]
     background = "#1a1b26"
@@ -130,5 +128,3 @@
     frame_color = "#f7768e"
     timeout = 0
     override_pause_level = 60
-    default_icon = dialog-warning-symbolic
-
