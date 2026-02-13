@@ -25,14 +25,37 @@ volume_notification() {
 
 	local is_muted
 	is_muted=$(echo "$volume_status" | awk '{print $2}')
-	
-	local notification_title
-	if [ "$is_muted" = true ]; then
-		notification_title="Volume: [${volume}%] [MUTED]"
+
+	# TODO: use real icons instead of of text-based ones
+	# use dunstify -i <icon-name> (audio-volume-muted-symbolic,
+	# audio-volume-low-symbolic, audio-volume-medium-symbolic,
+	# audio-volume-high-symbolic)
+	#
+	# The current issue is that color of these icons does not match with the theme
+	# of the rest of the system.
+	# I can copy the icons (from e.g. Papirus icon set) and create "custom" icons
+	# in .local/share/icons/TokyoNight that would match the color of the rest of
+	# the system, but it would be another maintenance burden
+	# Setting icon_theme = "TokyoNight, Papirus" in dunst config would than make
+	# dunst to use my custom icons, or fallback to papirus.
+	#
+	# TODO: maybe different notification daemons can recolor the icons? Investigate
+	# this possibility as well.
+	local pseudo_icon
+      "default": ["", " ", " "]
+	if [ "$is_muted" = "true" ] || [ "$volume" -eq 0 ]; then
+		pseudo_icon=" "
+	elif [ "$volume" -le 33 ]; then
+		pseudo_icon=""
+	elif [ "$volume" -le 66 ]; then
+		pseudo_icon=" "
 	else
-		notification_title="Volume: [${volume}%]"
+		pseudo_icon=" "
 	fi
-	dunstify -h string:x-canonical-private-synchronous:audio "${notification_title}" -h int:value:"${volume}"
+	dunstify \
+		-h string:x-canonical-private-synchronous:audio \
+		"Volume $pseudo_icon [${volume}%]" \
+		-h int:value:"${volume}"
 }
 
 inc_volume() {
