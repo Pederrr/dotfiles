@@ -1,0 +1,68 @@
+#!/usr/bin/env bash
+
+get_volume_status() {
+	local volume_status
+	volume_status=$(wpctl get-volume @DEFAULT_AUDIO_SINK@)
+
+	local volume
+	local is_muted
+	volume=$(echo "$volume_status" | awk '{print int($2 * 100)}')
+	if echo "$volume_status" | grep -q "[MUTED]"; then
+		is_muted=true
+	else
+		is_muted=false
+	fi
+
+	echo "${volume} ${is_muted}"
+}
+
+volume_notification() {
+	local volume_status
+	volume_status=$(get_volume_status)
+
+	local volume
+	volume=$(echo "$volume_status" | awk '{print $1}')
+
+	local is_muted
+	is_muted=$(echo "$volume_status" | awk '{print $2}')
+	
+	local notification_title
+	if [ "$is_muted" = true ]; then
+		notification_title="Volume: [${volume}%] [MUTED]"
+	else
+		notification_title="Volume: [${volume}%]"
+	fi
+	dunstify -h string:x-canonical-private-synchronous:audio "${notification_title}" -h int:value:"${volume}"
+}
+
+inc_volume() {
+	wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+ && volume_notification
+}
+
+dec_volume() {
+	wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- && volume_notification
+}
+
+toggle-mute() {
+	wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && volume_notification
+}
+
+# main
+case "${1:-}" in
+	--inc)
+		inc_volume
+		;;
+	--dec)
+		dec_volume
+		;;
+	--toggle-mute)
+		toggle-mute
+		;;
+	--get|"")
+		get_volume_status
+		;;
+	*)
+		echo "Usage: $0 [--inc|--dec|--toggle-mute|--get]" >&2
+		exit 1
+		;;
+esac
