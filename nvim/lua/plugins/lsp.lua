@@ -16,11 +16,6 @@ return {
 
 					map('K', vim.lsp.buf.hover, 'Hover Documentation')
 
-					map('gD', vim.lsp.buf.declaration, '[g]oto [D]eclaration')
-					map('gd', vim.lsp.buf.definition, '[g]oto [d]efinition')
-					map('gi', vim.lsp.buf.implementation, '[g]oto [i]mplementation')
-					map('gr', vim.lsp.buf.references, '[g]oto [r]eferences')
-
 					map('<leader>rn', vim.lsp.buf.rename, '[r]e[n]ame')
 					map('<leader>f', vim.lsp.buf.format, '[f]ormatting')
 
@@ -32,25 +27,6 @@ return {
 					map('<leader>e', vim.diagnostic.open_float, 'Open diagnostic in float')
 					map('[d', vim.diagnostic.goto_prev, 'goto previous diagnostic')
 					map(']d', vim.diagnostic.goto_next, 'goto next diagnostic')
-
-
-					-- The following two autocommands are used to highlight references of the
-					-- word under your cursor when your cursor rests there for a little while.
-					--    See `:help CursorHold` for information about when this is executed
-					--
-					-- When you move your cursor, the highlights will be cleared (the second autocommand).
-					local client = vim.lsp.get_client_by_id(event.data.client_id)
-					if client and client.server_capabilities.documentHighlightProvider then
-						vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
-							buffer = event.buf,
-							callback = vim.lsp.buf.document_highlight,
-						})
-
-						vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
-							buffer = event.buf,
-							callback = vim.lsp.buf.clear_references,
-						})
-					end
 				end,
 			})
 
