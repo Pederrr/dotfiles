@@ -6,6 +6,13 @@ return {
 	opts = {
 		dashboard = { enabled = true },
 		picker = { enabled = true },
+		indent = { enabled = true },
+		notifier = { enabled = true },
+		input = { enabled = true },
+		image = { enabled = true },
+		quickfiles = { enabled = true },
+		statuscolumn = { enabled = true },
+		scroll = { enabled = true },
 	},
 	keys = {
 		-- Picker
