@@ -106,7 +106,6 @@ return {
 				lua_ls = {},
 				solargraph = {}, -- Ruby
 				ts_ls = {}, -- TypeScript
-				kotlin_lsp = {}
 			}
 
 			require('mason').setup()
