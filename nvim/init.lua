@@ -31,6 +31,16 @@ vim.opt.smartindent = true
 
 vim.opt.clipboard = 'unnamedplus'
 
+local signs = {
+	Error = " ",
+	Hint = " ",
+	Info = " ",
+	Warn = " ",
+}
+for type, icon in pairs(signs) do
+	local hl = "DiagnosticSign" .. type
+	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
 -- Setup lazy.nvim
 require("lazy").setup({
 	spec = {

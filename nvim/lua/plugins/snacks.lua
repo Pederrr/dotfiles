@@ -12,7 +12,6 @@ return {
 			input = { enabled = true },
 			image = { enabled = true },
 			quickfiles = { enabled = true },
-			statuscolumn = { enabled = true },
 			scroll = { enabled = true },
 		},
 		keys = {
