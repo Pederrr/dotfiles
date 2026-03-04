@@ -42,7 +42,6 @@ volume_notification() {
 	# TODO: maybe different notification daemons can recolor the icons? Investigate
 	# this possibility as well.
 	local pseudo_icon
-      "default": ["", " ", " "]
 	if [ "$is_muted" = "true" ] || [ "$volume" -eq 0 ]; then
 		pseudo_icon=" "
 	elif [ "$volume" -le 33 ]; then

@@ -1,0 +1,59 @@
+#!/usr/bin/env bash
+
+get_brightness() {
+	brightnessctl -m | awk -F, '{print int($4)}'
+}
+
+brightness_notification() {
+	local brightness
+	brightness=$(get_brightness)
+
+	local pseudo_icon
+	# following the scale as waybar, so that the icons are consistent
+	if [ "$brightness" -lt 15 ]; then
+		pseudo_icon=""
+	elif [ "$brightness" -lt 30 ]; then
+		pseudo_icon="󰃜"
+	elif [ "$brightness" -lt 45 ]; then
+		pseudo_icon="󰃛"
+	elif [ "$brightness" -lt 60 ]; then
+		pseudo_icon="󰃞"
+	elif [ "$brightness" -lt 70 ]; then
+		pseudo_icon="󰃝"
+	elif [ "$brightness" -lt 85 ]; then
+		pseudo_icon="󰃟"
+	else
+		pseudo_icon="󰃠"
+	fi
+
+	dunstify \
+		-h string:x-canonical-private-synchronous:brightness \
+		"Brightness $pseudo_icon [${brightness}%]" \
+		-h int:value:"${brightness}"
+}
+
+
+inc_brightness() {
+	brightnessctl set 5%+ && brightness_notification
+}
+
+dec_brightness() {
+	brightnessctl -n1 set 5%- && brightness_notification
+}
+
+# main
+case "${1:-}" in
+	--inc)
+		inc_brightness
+		;;
+	--dec)
+		dec_brightness
+		;;
+	--get|"")
+		get_brightness
+		;;
+	*)
+		echo "Usage: $0 [--inc|--dec|--get]" >&2
+		exit 1
+		;;
+esac
