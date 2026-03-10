@@ -83,6 +83,10 @@ return {
 				lua_ls = {},
 				solargraph = {}, -- Ruby
 				ts_ls = {}, -- TypeScript
+				ltex = { -- grammar checking in text files
+					language = "en-GB"
+				},
+
 			}
 
 			require('mason').setup()
