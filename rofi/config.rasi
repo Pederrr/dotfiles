@@ -3,7 +3,7 @@ configuration {
   drun-display-format: "{icon} {name}";
   display-run: "Run:";
   font: "hack 10";
-  modi: [run, drun];
+  modi: [run, drun, window];
   icon-theme: "Papirus";
   show-icons: true;
   terminal: "kitty";
