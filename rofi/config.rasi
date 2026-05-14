@@ -82,3 +82,8 @@ prompt {
   padding: 12 0 0 12;
   text-color: #ffffff;
 }
+
+error-message, textbox {
+  padding: 8;
+  text-color: @fg;
+}
