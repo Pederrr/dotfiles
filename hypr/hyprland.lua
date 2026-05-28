@@ -5,7 +5,7 @@ require("monitors")
 --- PROGRAMS ---
 
 local terminal = "kitty"
-local browser = "firefox"
+local browser = "flatpak run app.zen_browser.zen"
 local dmenu = "rofi -show drun"
 local menu = "rofi -show run"
 local windowswitcher = "rofi -show window"
