@@ -6,7 +6,8 @@ return {
 		config = function()
 			local treesitter = require('nvim-treesitter')
 			local languages = {
-				'bash', 'c', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'vim', 'vimdoc', 'query', 'python'
+				'bash', 'c', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'vim', 'vimdoc', 'query', 'python',
+				'ruby', 'yaml', 'json',
 			}
 			treesitter.install(languages)
 
