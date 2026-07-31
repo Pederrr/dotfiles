@@ -6,7 +6,10 @@ return {
 	},
 	{
 		'sindrets/diffview.nvim',
-		cmd = 'DiffviewOpen',
+		cmd = {
+			'DiffviewOpen',
+			'DiffviewFileHistory',
+		},
 		opts = {},
 	},
 	{
